@@ -1,0 +1,3 @@
+name: pxe-www
+tlssecret: home-tls
+hostname: pxe.crazyzone.be
