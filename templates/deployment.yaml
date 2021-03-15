@@ -14,17 +14,9 @@ spec:
       labels:
         app: pxe-www
     spec:
-      volumes:
-        - name: pxe-www-storage
-          nfs: 
-            server: nas.crazyzone.be 
-            path: /volume1/docker-storage/pxe
       containers:
-      - image: httpd:latest
+      - image: registry.crazyzone.be/ipxe:latest
         name: pxe-www
         ports:
         - containerPort: 80
           name: pxe-www
-        volumeMounts:
-        - name: pxe-www-storage
-          mountPath: /usr/local/apache2/htdocs/
