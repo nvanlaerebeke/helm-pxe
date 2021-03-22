@@ -20,3 +20,10 @@ spec:
         ports:
         - containerPort: 80
           name: pxe-www
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5
